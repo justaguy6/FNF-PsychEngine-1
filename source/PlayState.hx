@@ -1331,7 +1331,7 @@ class PlayState extends MusicBeatState
 						
 						if(doPush)
 							
-						luaArray.push(new FunkinLua(Paths.lua("scripts/" + file));
+						luaArray.push(new FunkinLua(Paths.lua("scripts/" + file)));
 						
 					}
 				}
