@@ -91,11 +91,9 @@ class FunkinLua {
 			var resultStr:String = Lua.tostring(lua, result);
 			if(resultStr != null && result != 0) {
 				trace('Error on lua script! ' + resultStr);
-				#if windows
-				lime.app.Application.current.window.alert(resultStr, 'Error on lua script!');
-				#else
+				
 				luaTrace('Error loading lua script: "$script"\n' + resultStr, true, false, FlxColor.RED);
-				#end
+				
 				lua = null;
 				return;
 			}
@@ -516,13 +514,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
@@ -569,13 +567,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
@@ -621,13 +619,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
@@ -741,13 +739,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
@@ -781,13 +779,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
@@ -826,13 +824,13 @@ class FunkinLua {
 				cervix = Paths.modFolders(cervix);
 				doPush = true;
 			}
-			else if(FileSystem.exists(cervix))
+			else if(Assets.exists(cervix))
 			{
 				doPush = true;
 			}
 			else {
 				cervix = Paths.getPreloadPath(cervix);
-				if(FileSystem.exists(cervix)) {
+				if(Assets.exists(cervix)) {
 					doPush = true;
 				}
 			}
