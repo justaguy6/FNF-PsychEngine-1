@@ -870,8 +870,7 @@ class PlayState extends MusicBeatState
 		#if LUA_ALLOWED
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
-                var doPush:Bool = false;
-	
+                
 		#if !android // para não confundir 
 		foldersToCheck.insert(0, Paths.mods('scripts/'));
 		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
@@ -883,17 +882,14 @@ class PlayState extends MusicBeatState
 
 		for (folder in foldersToCheck)
 		{
-			if(OpenFlAssets.exists("scripts/"))
+			if(OpenFlAssets.exists(folder))
 			{
-				for (file in HSys.readDirectory("scripts/"))
+				for (file in HSys.readDirectory(folder))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
-						doPush = true;
 						
-						if(doPush)
-							
-						luaArray.push(new FunkinLua(Paths.lua("scripts/" + file)));
+						luaArray.push(new FunkinLua(Asset2File.getPath(folder + file)));
 						filesPushed.push(file);
 					}
 				}
